@@ -2,15 +2,16 @@ package selenium.com.saucedemo;
 
 import java.time.Duration;
 
-import org.openqa.selenium.WebDriver;
+
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
+
 import org.testng.annotations.BeforeMethod;
 
 import pages.DashboardPage;
 import pages.LoginPage;
 import utils.ConfigReader;
+
 import utils.ScreenShot;
 
 public class BaseTest {
@@ -34,11 +35,18 @@ public class BaseTest {
 	@AfterMethod
 	public void quitDriver(ITestResult result) {
 		String testName = result.getMethod().getMethodName();
-		if (result.getStatus() == ITestResult.FAILURE)
-			ScreenShot.takeScreenShot(DriverFactory.getDriver(), testName+" Failed");
-		else if(result.getStatus() == ITestResult.SUCCESS)
-			ScreenShot.takeScreenShot(DriverFactory.getDriver(), testName+" PASSED");
+		if (result.getStatus() == ITestResult.FAILURE) {
+			ScreenShot.takeScreenShot(DriverFactory.getDriver(), testName+" Failed", "Fail");
+		}
+		else if(result.getStatus() == ITestResult.SUCCESS) {
 
+			ScreenShot.takeScreenShot(DriverFactory.getDriver(), testName+" PASSED", "Pass");
+		}
+		else if(result.getStatus() == ITestResult.SKIP) {
+
+			ScreenShot.takeScreenShot(DriverFactory.getDriver(), testName+" PASSED", "Skip");
+		}
 		DriverFactory.tearDown();
 	}
+
 }

@@ -12,12 +12,19 @@ import org.openqa.selenium.WebDriver;
 
 public class ScreenShot {
 
-	public static void takeScreenShot(WebDriver driver, String testName) {
+	public static void takeScreenShot(WebDriver driver, String testName, String path) {
 
 		String timeStamp = LocalDateTime.now()
 				.format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
 		String fileName = testName + timeStamp+".png";
-		String filePath = System.getProperty("user.dir")+"./Screenshots/";
+		String filePath = System.getProperty("user.dir")+"./Screenshots/"+path+"/";
+		
+		File folderpath = new File(filePath);
+		//Create if no folder is present
+		if (!folderpath.exists()) {
+			folderpath.mkdirs();
+		}
+		
 		//ScreenShot
 		TakesScreenshot ts = (TakesScreenshot)driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);

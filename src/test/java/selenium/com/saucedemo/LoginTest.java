@@ -1,5 +1,6 @@
 package selenium.com.saucedemo;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import org.testng.annotations.Test;
@@ -8,7 +9,8 @@ import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import utils.ConfigReader;
-import utils.ScreenShot;
+
+
 
 
 

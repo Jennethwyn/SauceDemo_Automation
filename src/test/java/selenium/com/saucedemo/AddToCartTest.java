@@ -1,6 +1,5 @@
 package selenium.com.saucedemo;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import pages.DashboardPage;

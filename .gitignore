@@ -23,3 +23,7 @@ Screenshots/
 # Logs and reports
 logs/
 reports/
+
+# Extent Reports
+ExtentReport.html
+test-output/
