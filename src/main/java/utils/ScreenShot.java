@@ -16,12 +16,12 @@ public class ScreenShot {
 
 		String timeStamp = LocalDateTime.now()
 				.format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
-		String filename = testName + timeStamp+".png";
-		
+		String fileName = testName + timeStamp+".png";
+		String filePath = System.getProperty("user.dir")+"./Screenshots/";
 		//ScreenShot
 		TakesScreenshot ts = (TakesScreenshot)driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
-		File dest = new File("./Screenshots/"+filename);
+		File dest = new File(filePath+fileName);
 		
 		try {
 			FileUtils.copyFile(source, dest);

@@ -20,10 +20,9 @@ public class LoginTest extends BaseTest{
 		
 		lp.enterUsername(ConfigReader.getProperty("username"));
 		lp.enterPassword(ConfigReader.getProperty("password"));
-		ScreenShot.takeScreenShot(DriverFactory.getDriver(), "Login");
 		lp.clickLoginBtn();
 		Assert.assertTrue(lp.isLoginSuccessful(), "Login was not successful");
-		ScreenShot.takeScreenShot(DriverFactory.getDriver(), "Successful");
+		
 	}
 	
 }

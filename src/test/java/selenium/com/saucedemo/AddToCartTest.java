@@ -7,10 +7,6 @@ import pages.DashboardPage;
 
 public class AddToCartTest extends BaseTest{
 
-	
-	
-	
-
 	@Test
 	public void addToCartTest() {
 		DashboardPage dp = loginAsStandardUser();
