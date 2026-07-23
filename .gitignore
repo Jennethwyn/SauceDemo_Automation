@@ -1,0 +1,25 @@
+# Maven build files
+target/
+
+# Eclipse files
+.classpath
+.project
+.settings/
+bin/
+
+# Java compiled files
+*.class
+
+# TestNG reports
+test-output/
+
+# IntelliJ files
+.idea/
+*.iml
+
+# Selenium screenshots
+Screenshots/
+
+# Logs and reports
+logs/
+reports/
