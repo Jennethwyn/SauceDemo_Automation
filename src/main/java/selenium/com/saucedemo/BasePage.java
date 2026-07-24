@@ -33,4 +33,11 @@ public abstract class BasePage {
     protected String getPageTitle() {
         return driver.getTitle();
     }
+    
+    protected String getTextFromElement(By locator) {
+    	WebElement element = wait.waitForElementVisibility(locator);
+    	String text = element.getText();
+		return text;
+    	
+    }
 }

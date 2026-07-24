@@ -1,5 +1,7 @@
 package selenium.com.saucedemo;
 
+
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pages.DashboardPage;
@@ -10,6 +12,7 @@ public class AddToCartTest extends BaseTest{
 	public void addToCartTest() {
 		DashboardPage dp = loginAsStandardUser();
 		dp.addToCart();
+		Assert.assertEquals(dp.isAddToCartSuccessful(), "Remove");
 		
 	}
 }

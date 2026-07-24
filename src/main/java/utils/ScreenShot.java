@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 
 public class ScreenShot {
 
-	public static void takeScreenShot(WebDriver driver, String testName, String path) {
+	public static String takeScreenShot(WebDriver driver, String testName, String path) {
 
 		String timeStamp = LocalDateTime.now()
 				.format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
@@ -26,9 +26,10 @@ public class ScreenShot {
 		}
 		
 		//ScreenShot
+		String ScreenshotPath = filePath+fileName;
 		TakesScreenshot ts = (TakesScreenshot)driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
-		File dest = new File(filePath+fileName);
+		File dest = new File(ScreenshotPath);
 		
 		try {
 			FileUtils.copyFile(source, dest);
@@ -36,6 +37,7 @@ public class ScreenShot {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return ScreenshotPath;
 		
 	}
 }

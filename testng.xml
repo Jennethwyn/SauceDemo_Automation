@@ -10,6 +10,7 @@
     <classes>
       <class name="selenium.com.saucedemo.AddToCartTest"/>
       <class name="selenium.com.saucedemo.LoginTest"/>
+      <class name="selenium.com.saucedemo.LoginTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

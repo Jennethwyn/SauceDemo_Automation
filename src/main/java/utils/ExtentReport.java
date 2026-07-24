@@ -20,9 +20,11 @@ public class ExtentReport {
 		//Create empty HTML file named ExtentReport
 		if (extent == null) {
 			ExtentSparkReporter reporter = new ExtentSparkReporter(reportPath);
-			
+			reporter.config().setDocumentTitle("Extent Report");
+			reporter.config().setReportName("Sauce Demo");
 			extent = new ExtentReports();
 			extent.attachReporter(reporter);
+			
 		}
 		return extent;
 	}
